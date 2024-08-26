@@ -1,5 +1,3 @@
-from pyray import *
-
 class Scene:
     def __init__(self):
         self.entities = []

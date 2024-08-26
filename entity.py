@@ -1,20 +1,20 @@
-from pyray import *
+import pyray as rl
 
 class Entity:
     def __init__(self, start_x, start_y):
-        self.pos = Vector2(start_x, start_y)
-        img = load_image('rose.png')
-        self.texture = load_texture_from_image(img)
+        self.pos = rl.Vector2(start_x, start_y)
+        img = rl.load_image('rose.png')
+        self.texture = rl.load_texture_from_image(img)
 
     def update(self):
-        if is_key_down(KEY_UP):
+        if rl.is_key_down(rl.KeyboardKey.KEY_UP):
             self.pos.y -= 5
-        elif is_key_down(KEY_DOWN):
+        elif rl.is_key_down(rl.KeyboardKey.KEY_DOWN):
             self.pos.y += 5
-        if is_key_down(KEY_LEFT):
+        if rl.is_key_down(rl.KeyboardKey.KEY_LEFT):
             self.pos.x -= 5
-        elif is_key_down(KEY_RIGHT):
+        elif rl.is_key_down(rl.KeyboardKey.KEY_RIGHT):
             self.pos.x += 5
 
     def draw(self):
-        draw_texture(self.texture, int(self.pos.x), int(self.pos.y), WHITE)
+        rl.draw_texture(self.texture, int(self.pos.x), int(self.pos.y), rl.WHITE)

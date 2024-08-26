@@ -1,19 +1,19 @@
-from pyray import *
+import pyray as rl
 from entity import Entity
 from scene import Scene
 
-init_window(640, 360, 'Rose Engine')
-set_target_fps(60)
+rl.init_window(640, 360, 'Rose Engine')
+rl.set_target_fps(60)
 
 scene = Scene()
 rose = Entity(50, 50)
 scene.add(rose)
 
-while not window_should_close():
-    begin_drawing()
-    clear_background(BLUE)
+while not rl.window_should_close():
+    rl.begin_drawing()
+    rl.clear_background(rl.BLUE)
     for entity in scene.entities:
         entity.update()
         entity.draw()
-    end_drawing()
-close_window()
+    rl.end_drawing()
+rl.close_window()
